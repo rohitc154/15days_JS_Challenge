@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manipulation</title>
+    <style>
+        .test {
+            border: 2px solid black;
+        }
+
+        .red {
+            border: 2px solid red;
+
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div id="myId" class="container">
+        <h2>This is my Div</h2>
+    </div>
+    <ul id="myUl">
+        <li>Python</li>
+        <li>Java</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <button id="btn">Change</button>
+    <script>
+        // ---------------Activity 01---------------------
+        // document.querySelector('#myId').style.color = 'green';
+        // document.querySelector('h2').style.backgroundColor = "red";
+
+        // -------------------:)Activity 02(:--------------
+        const newDiv = document.createElement('div');
+        newDiv.innerText = "Hello! Dynamically created Div";
+        document.getElementById('body').appendChild(newDiv)
+        // ------------------------------------------------
+        const newLi = document.createElement('li');
+        newLi.innerText = "Mojo";
+        document.getElementById('myUl').appendChild(newLi);
+
+        // -------------------:)Activity 03(:--------------
+        // newDiv.remove()
+        // -------------------------------------------------
+        // const ul = document.querySelector('#myUl');
+        // ul.removeChild(ul.lastElementChild)
+
+        // -------------------:)Activity 04(:--------------
+        const img = document.createElement('img');
+        img.setAttribute('src', 'https://miro.medium.com/v2/resize:fit:1400/format:webp/0*2X75k4WUxJUztgad.jpg');
+        img.setAttribute('width', '500px')
+        img.setAttribute('class', 'myImg')
+        document.getElementById('body').appendChild(img);
+
+        document.querySelector('.myImg').classList.add('test')
+
+        // -------------------:)Activity 05(:--------------
+        document.getElementById('btn').addEventListener('click', () => {
+            document.querySelector('p').innerText = "lorem3"
+        })
+        // ------------------------------------------------
+        document.querySelector('.myImg').addEventListener('mouseover', () => {
+            document.querySelector('.myImg').classList.remove('test')
+            document.querySelector('.myImg').classList.add('red')
+
+        })
+    </script>
+</body>
+
+</html>
