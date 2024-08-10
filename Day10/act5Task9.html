@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="myDiv">
+        <ul id="myUl">
+            <li>Item1</li>
+            <li>Item2</li>
+            <li>Item3</li>
+            <li>Item4</li>
+        </ul>
+    </div>
+</body>
+<script>
+    // const ul = document.querySelector('#myUl');
+    // ul.addEventListener('click', (event) => {
+    //     console.log(event.target.innerText);
+    // })
+
+    // ------ :) task 10 (: ---- 
+    const ul = document.querySelector('#myDiv');
+    const newP = document.createElement('p');
+    newP.innerText = "Python";
+    ul.appendChild(newP)
+
+    console.log(newP.parentNode);
+
+    newP.addEventListener('click', (e) => {
+        console.log(e.target.tagName);
+        if (e.target.tagName == 'P') {
+            newP.innerText = 'Congrats Monu!, You have done it.'
+        }
+    })
+
+</script>
+
+</html>

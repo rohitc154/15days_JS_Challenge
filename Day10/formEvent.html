@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Event</title>
+</head>
+
+<body>
+    <form id="myForm">
+        Enter Name : <input type="text" id="name">
+        <br>
+        Enter Mail : <input type="email" id="email">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+<script>
+    document.addEventListener('domContentLoaded', () => {
+        const form = document.getElementById('myForm');
+        myForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const myData = document.getElementById('name').value;
+            console.log(myData);
+
+            // const formData = new FormData(form);
+            // const formDataEntries = Object.fromEntries(formData.entries());
+
+            // console.log(formDataEntries);
+
+        })
+    })
+</script>
+
+</html>

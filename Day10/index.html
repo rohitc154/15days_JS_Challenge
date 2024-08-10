@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+
+<body>
+    <div id="root">
+        <p id="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus eum officiis expedita sed repellat
+            quas inventore dicta amet eveniet fugiat obcaecati, maiores perferendis, aperiam tempora?</p>
+        <button id="btn">Change</button>
+        <img id="toggleImg" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*2X75k4WUxJUztgad.jpg" alt="">
+    </div>
+    <form id="myForm" action="#">
+        <label>Enter Input : </label>
+        <input type="text" id="myInput">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+<script>
+    const bEvent = document.getElementById('btn');
+    bEvent.addEventListener('click', () => {
+        document.querySelector('#p').innerText = "lorem5"
+    })
+    // ----------------------------------------------------
+    document.getElementById('toggleImg').setAttribute('width', '400px')
+    document.getElementById('toggleImg').addEventListener('dblclick', () => {
+        document.getElementById('toggleImg').setAttribute('width', '500px')
+    })
+    // -----------------------------------------------------
+    const pEvent = document.getElementById('p');
+    pEvent.addEventListener('mouseover', () => {
+        pEvent.style.backgroundColor = 'yellow';
+    })
+    pEvent.addEventListener('mouseout', () => {
+        pEvent.style.backgroundColor = null;
+    })
+    // -------------------------------------------------------
+    // const newInput = document.getElementById('myInput')
+    // newInput.addEventListener('keydown', (e) => {
+    //     console.log(e.key);
+    // })
+    // const newInput = document.getElementById('myInput')
+    // newInput.addEventListener('keyup', (e) => {
+    //     console.log(e.key);
+    // })
+    // ----------------------------------------------------
+    document.addEventListener('DOMContentLoaded', () => {
+        const myForm = document.getElementById('myForm');
+        myForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(myForm);
+            const formDataEntries = Object.fromEntries(formData.entries());
+
+            console.log(formData.values);
+            console.log(formDataEntries.toString());
+        })
+    });
+
+</script>
+
+</html>
